@@ -18,27 +18,39 @@
     <body>
         <div id="loading-main" style="min-height: auto;">
 
+            <div class="logocentering">
+                <!-- This is where you want to replace with your logo -->
+                <img class="cursor-none brand-logo animate-logo" src="/assets/branding/qbcore.svg"></img>
+                <div class="loading-center">
+                    <q-btn :ripple="false" flat size="xl" icon="downloading" color="white" style="margin-right: 20px;"></q-btn>
+                    <div class="loadingbar">
+                        <div class="loadbar"><div class="thingy"></div></div>
+                    </div>
+                    <q-btn icon="settings_suggest" color="bgbutton" @click="settings = true"></q-btn>
+                </div>
+            </div>
+
             <!-- Uncomment q-parallax and comment out q-carousel if you want to use a video background instead -->
 
-            <q-carousel animated v-model="firstslide" :autoplay="secondap" ref="carousel" infinite>
+            <!-- <q-carousel animated v-model="firstslide" :autoplay="secondap" ref="carousel" infinite>
                 <q-carousel-slide :name="1" img-src="/assets/images/1.png"></q-carousel-slide>
                 <q-carousel-slide :name="2" img-src="/assets/images/2.png"></q-carousel-slide>
                 <q-carousel-slide :name="3" img-src="/assets/images/3.png"></q-carousel-slide>
                 <q-carousel-slide :name="4" img-src="/assets/images/4.png"></q-carousel-slide>
-            </q-carousel>
+            </q-carousel> -->
 
             <!-- This is where you want to replace with your video -->
 
-            <!--
+            
             <q-parallax :height="1080">
                 <template v-slot:media>
                     <video id="video" width="1920" height="1080" autoplay loop muted>
                     <source type="video/mp4" src="/assets/video/freestockvideo.mp4"></video>
                 </template>
             </q-parallax>
-            -->
+           
 
-            <div class="absolute-top q-pa-xl">
+            <div class="absolute-top q-pa-xl keys-shadow">
                 <q-card flat style="width: auto; background: transparent;">
                     <q-card-section class="row items-center no-wrap">
                         <q-carousel animated infinite :autoplay="secondap" v-model="secondslide" transition-next="fade" transition-prev="fade" class="bg-transparent text-white">
@@ -182,20 +194,17 @@
                 <q-card flat style="width: auto; background: transparent;">
                     <q-card-section class="row items-center no-wrap">
 
-                        <!-- This is where you want to replace with your logo -->
-
-                        <img class="cursor-none brand-logo" src="/assets/branding/qbcore.svg"></img>
                         <q-space></q-space>
-                        <q-btn :ripple="false" flat size="xl" icon="downloading" color="white" @click="download = true"></q-btn>
+                        <!-- <q-btn :ripple="false" flat size="xl" icon="downloading" color="white" @click="download = true"></q-btn>
                         <div class="loadingbar">
                             <div class="loadbar"><div class="thingy"></div></div>
                         </div>
-                        <q-btn icon="settings_suggest" color="bgbutton" @click="settings = true"></q-btn>
+                        <q-btn icon="settings_suggest" color="bgbutton" @click="settings = true"></q-btn> -->
                     </q-card-section>
                 </q-card>
             </div>
 
-            <q-dialog no-shake v-model="download" position="bottom">
+            <!-- <q-dialog no-shake v-model="download" position="bottom">
                 <q-card style="max-width: 400px; margin-left: 50vw; margin-bottom: 13vh;">
                     <q-card-section>
                         <div style="white-space: pre-wrap;" class="text-h6">
@@ -211,7 +220,7 @@
                         <q-btn flat label="Hide details" color="detailbutton" v-close-popup></q-btn>
                     </q-card-actions>
                 </q-card>
-            </q-dialog>
+            </q-dialog> -->
 
             <q-dialog no-shake v-model="settings" position="right">
                 <q-card style="max-width: 300px; margin-right: 3.4vw; top: 20vh!important;">
